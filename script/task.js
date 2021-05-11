@@ -20,7 +20,6 @@ alert('task 2');
 function getWordsLength(string) {
     var count = 0;
     var el_string = string.split(' ');
-    var lenght = el_string.lenght;
     for (var el of el_string) {
         count++;
     }
