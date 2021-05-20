@@ -21,7 +21,7 @@ input{
 #age{
     width: 10%;
 }
-#comm{
+#comment{
     width: 90%;
     resize: none;
     border-color: red;
