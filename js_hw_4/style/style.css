@@ -1,0 +1,38 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    width: 25%;
+    margin: 0 auto;
+}
+form{
+    display:block ;
+    text-align:center;
+    width: 100%;
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+input{
+   display: block;
+   margin: 0 auto;
+    width: 50%;
+    border-color: red;
+    border-radius: 5px;
+    
+}
+#age{
+    width: 10%;
+}
+#comm{
+    width: 90%;
+    resize: none;
+    border-color: red;
+    border-radius: 5px;
+}
+#country{
+    border-color: red;
+    border-radius: 5px;
+}
+#btn{
+    width: 15%;
+   display: block;
+    margin: 0 auto;
+}
