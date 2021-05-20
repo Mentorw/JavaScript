@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Homework</title>
+    <link rel="stylesheet" href="./style/style.css">
 </head>
+
 <body>
-    <script src="js/countries.js"></script>
+    <form method="POST" action="" name="form">
+        <p> <label for="name">Input name:</label>
+            <input type="text" name="name" id="name" placeholder="Name">
+        </p>
+        <p>
+            <label for="email">Input email:</label>
+            <input type="email" name="email" id="email" placeholder="User@gmail.com">
+        </p>
+        <p>
+            <label for="age">Input age:</label>
+            <input type="number" min="0" name="age" id="age">
+        </p>
+        <p>
+            <label for="comment">Leave a comment:</label>
+            <textarea name="comment" id="comment" cols="30" rows="5"></textarea>
+        </p>
+        <p>
+            <label for="country">Select a country:</label>
+            <select name="country" id="country">
+                <option value="Ukraine">Ukraine</option>
+                <option value="Germany">Germany</option>
+                <option value="USA">USA</option>
+                <option value="Turkey">Turkey</option>
+                <option value="Russia">Russia</option>
+            </select>
+        </p>
+        <p>
+            <input type="submit" value="Send" id="btn">
+        </p>
+    </form>
     <script src="js/app.js"></script>
 </body>
+
 </html>
