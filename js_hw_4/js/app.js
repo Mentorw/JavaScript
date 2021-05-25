@@ -1,22 +1,33 @@
-let click = document.getElementById('btn');
-click.onclick = function () {
-    let user = {};
-    user.name = document.getElementById('name').value;
-    user.email = document.getElementById('email').value;
-    user.age = document.getElementById('age').value;
-    user.comment = document.getElementById('comment').value;
-    user.country = document.getElementById('country').value;
-    console.log('user:' + user);
-    return false;
+const renderCountries = countries => {
+    console.log(countries);
+    let htmlStr = '';
+    for (let country of countries) {
+        
+        htmlStr += `<tr>
+            <td>${country.region}</td>
+            <td>${country.currencies.map(el => el.name).join(',')}</td>
+            <td>${country.languages.map(el => el.name).join(',')}<td>
+            <td><img src="${country.flag}" height="50px" "></img>
+        </tr>`
+    }
+    console.log(htmlStr);
+    document.querySelector('table > tbody').innerHTML = htmlStr;
+
 }
-// Альтернативное решение
-/*document.forms.form.onsubmit = function(){
-    let user = {};
-    user.name = this.name.value;
-    user.email = this.email.value;
-    user.age = this.age.value;
-    user.comment = this.comment.value;
-    user.country = this.country.value;
-    console.log('user:' + user);
-    return false;
-}*/
+const getData = () => {
+    fetch('https://restcountries.eu/rest/v2/all')
+        .then(res => res.json()).then(data => {
+            countries = data.map(country => {
+                return {
+                    region: country.region,
+                    currencies: country.currencies,
+                    languages: country.languages,
+                    flag: country.flag
+                };
+            });
+            renderCountries(countries);
+        });
+}
+document.querySelector('.render_countries').onclick = e => {
+    getData();
+}
