@@ -11,11 +11,9 @@ window.onload = function () {
         let htmlStr = '';
         for (let element of coursesData) {
             htmlStr += `<tr>
-             <td>${element.r030}</td>
+           
              <td>${element.txt}</td>
              <td>${element.rate}</td>
-             <td>${element.cc}</td>
-             <td>${element.exchangedate}</td>
          </tr>`;
         }
         if (!coursesData.length) {
@@ -31,9 +29,9 @@ window.onload = function () {
         fetch(`https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?date=${data}&json`)
             .then(res => res.json()).then(data => {
                 coursesData = data.map(course => {
-                    let { r030, txt, rate, cc, exchangedate } = course;
+                    let { txt, rate, cc } = course;
                     return {
-                        r030, txt, rate: rate.toFixed(2), cc, exchangedate
+                        txt, rate: rate.toFixed(2)
                     };
                 });
                 renderRate(coursesData);
